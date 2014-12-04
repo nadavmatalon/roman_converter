@@ -1,4 +1,6 @@
-#Roman Converter [TDD](http://en.wikipedia.org/wiki/Test-driven_development)
+#Roman Converter
+
+[![Code Climate](https://codeclimate.com/github/nadavmatalon/roman_converter/badges/gpa.svg)](https://codeclimate.com/github/nadavmatalon/roman_converter)
 
 ## Table of Contents
 
