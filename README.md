@@ -10,8 +10,9 @@
 ##General Description
 
 The 'Roman Converter' can be used to convert any roman numeral string 
-(e.g. 'XXV') to a natural number and/or any natural number 
-(e.g. 25) to a roman numeral string (the code is tested up to 10,000).
+(e.g. 'XXV') to a natural number and any natural number 
+(e.g. 25) to a roman numeral string (the code is tested up to 
+"MMMMMMMMMM" and 10,000 respectively).
 
 The code was written in [Ruby](https://www.ruby-lang.org/en/) (2.1.1) 
 using [TDD](http://en.wikipedia.org/wiki/Test-driven_development) methodology
@@ -32,7 +33,7 @@ $> irb
 The `convert` Class method can then be used with either a `String` or a 
 `Fixnum` as follows:
 
-```irb
+```ruby
 >> RomanConverter.convert('XXV')
 => 25
 >> RomanConverter.convert(25)
