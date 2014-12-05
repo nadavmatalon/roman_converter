@@ -17,33 +17,47 @@ class RomanConverter
       'I'  => 1
     }
 
-  def self.convert(input)
-    case input
-      when String then convert_roman(input)
-      when Fixnum then convert_natural(input)
-      else fail TypeError, 'Argument must be a String or Fixnum'
-    end
+  attr_reader :value
+
+  def initialize(value)
+    @value = value if valid?(value)
   end
 
-  def self.convert_roman(roman_str)
+  def convert
+    value.class == String ? convert_roman : convert_natural
+    self
+  end
+
+  def self.convert(value)
+    RomanConverter.new(value).convert.value
+  end
+
+  private
+
+  def valid?(value)
+    err_msg = 'Argument must be a String or Fixnum'
+    [String, Fixnum].include?(value.class) ? true : (fail TypeError, err_msg)
+  end
+
+  def convert_roman
     number = 0
     ROMAN_NUMERALS_TABLE.each do |numeral, natural|
-      while roman_str.index(numeral) == 0
+      while value.index(numeral) == 0
         number += natural
-        roman_str.slice!(numeral)
+        @value.slice!(numeral)
       end
     end
-    number
+    @value = number
   end
 
-  def self.convert_natural(number)
+  def convert_natural
     roman_str = ''
-    ROMAN_NUMERALS_TABLE.each do |roman, natural|
-      while (number >= natural)
+    ROMAN_NUMERALS_TABLE.map do |roman, natural|
+      while value >= natural
         roman_str << roman
-        number -= natural
+        @value -= natural
       end
     end
-    roman_str
+    @value = roman_str
   end
 end
