@@ -6,13 +6,14 @@
 
 * [General Description](#general-description)
 * [How to Install and Run](#how-to-install-and-run)
+* [Functional Description](#functional-description)
 * [Testing](#testing)
 * [License](#license)
 
 ##General Description
 
-The 'Roman Converter' can be used to convert any roman numeral string 
-(e.g. 'XXV') to a natural number and any natural number 
+The 'Roman Converter' wraps a converter app that can be used to convert 
+any roman numeral string (e.g. 'XXV') to a natural number and any natural number 
 (e.g. 25) to a roman numeral string (the code is tested up to 
 "MMMMMMMMMM" and 10,000 respectively).
 
@@ -32,13 +33,36 @@ $> irb
 >> require './lib/roman_converter.rb'
 ```
 
-The `convert` Class method can then be used with either a `String` or a 
-`Fixnum` as follows:
+
+##Functional Description
+
+There are two ways to use the Roman Converter app.
+
+First, directly by employing the `convert` Class methdod:
 
 ```ruby
 >> RomanConverter.convert('XXV')
 => 25
 >> RomanConverter.convert(25)
+=> "XXV"
+```
+
+Second, by initializing a RomanConverter object and then employing 
+the `convert` and `value` Instance methods:
+
+```ruby
+>> converter = RomanConverter.new('XXV')
+=> #<RomanConverter:0x000001037f21b0 @value="XXV">
+>> converter.convert
+=> #<RomanConverter:0x000001037f21b0 @value=25>
+>> converter.value
+=> 25
+
+>> converter = RomanConverter.new(25)
+=> #<RomanConverter:0x00000103791c20 @value=25>
+>> converter.convert
+=> #<RomanConverter:0x00000103791c20 @value="XXV">
+>> converter.value
 => "XXV"
 ```
 
