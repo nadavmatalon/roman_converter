@@ -87,7 +87,7 @@ describe RomanConverter do
       end
     end
 
-    it 'will reverse the value with each conversion when chained together' do
+    it 'will reverse the value with each chained conversion' do
       expect(converter_numeral.convert.convert.value).to eq 'I'
       expect(converter_numeral.convert.convert.convert.value).to eq 1
     end

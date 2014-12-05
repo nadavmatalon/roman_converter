@@ -54,8 +54,8 @@ class RomanConverter
     roman_str = ''
     ROMAN_NUMERALS_TABLE.map do |roman, natural|
       while value >= natural
-        @value -= natural
         roman_str << roman
+        @value -= natural
       end
     end
     @value = roman_str
