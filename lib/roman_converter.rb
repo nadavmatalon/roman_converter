@@ -44,7 +44,7 @@ class RomanConverter
     ROMAN_NUMERALS_TABLE.each do |numeral, natural|
       while value.index(numeral) == 0
         number += natural
-        value.slice!(numeral)
+        @value.slice!(numeral)
       end
     end
     @value = number
