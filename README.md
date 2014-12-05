@@ -12,14 +12,14 @@
 
 ##General Description
 
-The `Roman Converter` class wraps a convert app that can be used to convert 
+The __Roman Converter__ is a wrapper class for an app that can be used to convert 
 any roman numeral string (e.g. 'XXV') to a natural number and any natural number 
 (e.g. 25) to a roman numeral string (the code is tested up to 
 "MMMMMMMMMM" and 10,000 respectively).
 
 The code was written in [Ruby](https://www.ruby-lang.org/en/) (2.1.1) 
 using [TDD](http://en.wikipedia.org/wiki/Test-driven_development) methodology
-following the course at [Makers Academy](http://www.makersacademy.com/), 
+following the course at [Makers Academy](http://www.makersacademy.com/).
 
 
 ##How to Install and Run
