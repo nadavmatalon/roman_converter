@@ -10,7 +10,7 @@ describe RomanConverter do
       expect{ RomanConverter.new }.to raise_error(ArgumentError)
     end
 
-   it 'must be initialized with a single argument' do
+    it 'must be initialized with a single argument' do
       expect{ RomanConverter.new('I', 'I') }.to raise_error(ArgumentError)
     end
 
@@ -32,7 +32,7 @@ describe RomanConverter do
 
   context 'value attribute' do
 
-   it 'is set to roman numeral value following initialization with a String' do
+    it 'is set to roman numeral value following initialization with a String' do
       expect(converter_numeral.value).to eq 'I'
     end
 
