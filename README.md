@@ -12,7 +12,7 @@
 
 ##General Description
 
-The 'Roman Converter' wraps a converter app that can be used to convert 
+The `Roman Converter` class wraps a convert app that can be used to convert 
 any roman numeral string (e.g. 'XXV') to a natural number and any natural number 
 (e.g. 25) to a roman numeral string (the code is tested up to 
 "MMMMMMMMMM" and 10,000 respectively).
